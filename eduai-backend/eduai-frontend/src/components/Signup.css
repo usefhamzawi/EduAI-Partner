@@ -1,0 +1,112 @@
+/* src/components/Signup.css */
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('https://www.transparenttextures.com/patterns/diagonal-striped-brick.png'), linear-gradient(135deg, #2c3e50, #4ca1af);
+  }
+  
+  .signup-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header-box {
+    background: rgba(255, 255, 255, 0.9); /* Transparent background with a hint of white */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow for lifted effect */
+    margin-bottom: 20px;
+    text-align: center;
+    border: 2px solid transparent; /* Transparent border to match the signup button */
+    border-image: linear-gradient(to right, #ff6f61, #4ca1af); /* Gradient border color */
+    border-image-slice: 1;
+  }
+  
+  .brand-name {
+    font-family: 'Poppins', sans-serif; /* Fancy font */
+    font-weight: 700;
+    color: #2c3e50; /* Text color */
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 
+      2px 2px 0 #ff6e6100, /* Outline color */
+      -2px -2px 0 #ff6e6100, 
+      2px -2px 0 #ff6e6100, 
+      -2px 2px 0 #ff6e6100; 
+  }
+  
+  .signup-title {
+    font-family: 'Poppins', sans-serif; /* Fancy font */
+    font-weight: 700;
+    color: #2c3e50; /* Text color */
+    font-size: 2.5em;
+    text-shadow: 
+      2px 2px 0 #ff6e6100, /* Outline color */
+      -2px -2px 0 #ff6e6100, 
+      2px -2px 0 #ff6e6100, 
+      -2px 2px 0 #ff6e6100; 
+  }
+  
+  .signup-form {
+    background: rgba(255, 255, 255, 0.95); /* Slightly transparent white background */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Larger shadow for a more lifted effect */
+    width: 400px; /* Fixed width for form */
+    text-align: center;
+  }
+  
+  .signup-input {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 12px;
+    border: 2px solid #4ca1af;
+    border-radius: 10px; /* Rounded corners for a softer look */
+    margin-bottom: 20px;
+    font-size: 1em;
+  }
+  
+  .signup-button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px; /* Rounded corners */
+    font-size: 1.2em;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .signup-button:hover {
+    background-color: #ff5a47;
+  }
+  
+  .link-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .link {
+    color: #4ca1af;
+    text-decoration: none;
+    font-size: 1em;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  
+  .already-have-account {
+    font-size: 1em;
+    color: #4ca1af;
+    text-decoration: none;
+  }
+  
+  .already-have-account:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,67 @@
+/* src/components/Features.css */
+.features-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('https://www.transparenttextures.com/patterns/diagonal-striped-brick.png'), linear-gradient(135deg, #2c3e50, #4ca1af);
+  color: white;
+  padding: 20px;
+}
+
+.features-content {
+  max-width: 1200px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1); /* Slightly transparent white background */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.features-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.features-description {
+  font-size: 1.4em;
+  margin-bottom: 40px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background: #4ca1af; /* Slightly transparent background for items */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.feature-icon {
+  margin-bottom: 15px;
+  font-size: 3em;
+  color: #ffffff9c;
+}
+
+.feature-title {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.feature-description {
+  font-size: 1.2em;
+  color: #e0e0e0;
+}

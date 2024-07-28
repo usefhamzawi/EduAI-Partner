@@ -1,0 +1,30 @@
+/* src/components/Footer.css */
+.footer {
+  position: relative; /* Ensure the footer is positioned correctly */
+  background-color: #2c3e50; /* Dark background color */
+  color: white; /* Text color */
+  padding: 10px 0; /* Padding for spacing */
+  text-align: center; /* Center text */
+  width: 100%; /* Full width */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for separation */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto; /* Center align the content */
+}
+
+body, html {
+  margin: 0; /* Remove default margin */
+  height: 100%; /* Ensure full height */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+main {
+  flex: 1; /* Take up remaining space */
+}

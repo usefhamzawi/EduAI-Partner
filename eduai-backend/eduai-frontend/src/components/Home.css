@@ -1,0 +1,136 @@
+.home {
+  margin-top: 60px; /* To account for the fixed navbar */
+  padding: 20px;
+  text-align: center;
+  background: url('https://www.transparenttextures.com/patterns/diagonal-striped-brick.png'), linear-gradient(135deg, #2c3e50, #4ca1af);
+  color: rgb(255, 255, 255);
+}
+
+.hero {
+  background: url('../assets/hero-bg.jpg') no-repeat center center/cover;
+  padding: 200px 20px; /* Increased padding for better visibility */
+  border-radius: 10px;
+  color: white;
+  position: relative;
+  margin-bottom: 120px; /* Increased space between hero section and features section */
+}
+
+.hero-title {
+  font-size: 4em;
+  font-family: 'Poppins', sans-serif; /* Fancy font */
+  font-weight: 700;
+  color: #ffffff; /* Text color */
+  text-shadow: 
+    3px 3px 0 #4ca1af, /* Outline color for right and bottom */
+    -3px -3px 0 #4ca1af, /* Outline color for left and top */
+    3px -3px 0 #4ca1af, 
+    -3px 3px 0 #4ca1af; 
+  margin-bottom: 20px;
+}
+
+.hero-text {
+  font-size: 1.5em;
+  font-family: 'Roboto', sans-serif; /* Fancy font */
+  font-weight: 400;
+  color: #ffffff; /* Text color */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Added text shadow */
+  margin-bottom: 40px; /* Space below the hero text */
+}
+
+.signup-section {
+  margin: 30px 0; /* Increased space around the signup section */
+}
+
+.email-signup {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.email-signup:hover {
+  background-color: #ff5a47;
+}
+
+.signup-info {
+  font-size: 1.5em; /* Same font size as .hero-text */
+  color: #ffffff; /* Same color as .hero-text */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Same text shadow as .hero-text */
+  margin-top: 20px; /* Space above the signup info text */
+}
+
+.features-section {
+  margin: 50px 0; /* Margin to space out from the rest of the content */
+}
+
+.main-header {
+  font-size: 3em;
+  font-family: 'Poppins', sans-serif; /* Fancy font */
+  font-weight: 700;
+  color: #ffffff; /* Text color */
+  text-shadow: 
+    4px 4px 0 #4ca1af, /* Outline color for right and bottom */
+    -4px -4px 0 #4ca1af, /* Outline color for left and top */
+    4px -4px 0 #4ca1af, 
+    -4px 4px 0 #4ca1af; 
+  margin-bottom: 40px; /* Increased space below the main header */
+}
+
+.main-description {
+  font-size: 1.8em;
+  font-family: 'Roboto', sans-serif; /* Fancy font */
+  font-weight: 400;
+  color: #ffffff; /* Text color */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Added text shadow */
+  margin-bottom: 60px; /* Space below the description text */
+}
+
+.feature-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+  margin: 0 auto;
+}
+
+.feature-item {
+  background: rgb(245, 245, 245); /* Light grey background color with slight RGB style */
+  padding: 30px; /* Increased padding for larger boxes */
+  border-radius: 15px;
+  width: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 50px; /* Increased space below each item */
+  position: relative;
+  font-size: 1.2em; /* Larger text size */
+  color: #333;
+  text-align: left; /* Align text to the left for a better layout */
+}
+
+.feature-item:before {
+  content: attr(data-number);
+  font-size: 3em; /* Larger font size for numbering */
+  color: #4ca1af; /* Color for the numbering */
+  position: absolute;
+  top: -10px; /* Adjust as needed */
+  left: 20px;
+  font-weight: bold;
+}
+
+.feature-item h2 {
+  font-size: 2em; /* Increased font size for section titles */
+  margin-bottom: 15px;
+  color: #2c3e50; /* Darker color for contrast */
+}
+
+.feature-item p {
+  color: #666; /* Lighter color for text */
+}
+
+@media (max-width: 768px) {
+  .feature-item {
+    width: 80%;
+    margin: 10px auto;
+  }
+}

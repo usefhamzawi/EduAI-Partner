@@ -1,0 +1,65 @@
+/* src/components/Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #2c3e50, #4ca1af); /* Purple gradient */
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow for fancy effect */
+  border-bottom: 2px solid #ff6f61; /* Added bottom border for accent */
+}
+
+.navbar .nav-logo {
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 15px;
+  margin-left: 50px; /* Move Home and Features to the left */
+}
+
+.navbar .nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .nav-link:hover {
+  background-color: #ff6f61; /* Hover background */
+  color: white;
+}
+
+.navbar .nav-buttons {
+  display: flex;
+  gap: 15px;
+  margin-right: 50px; /* Move Login and Sign Up to the right */
+}
+
+.navbar .nav-button {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px; /* More rounded corners */
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to buttons */
+}
+
+.navbar .nav-button:hover {
+  background-color: #ff5a47; /* Hover effect for button */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}

@@ -1,0 +1,15 @@
+/* src/components/PracticeTest.css */
+.practicetest-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: white;
+    min-height: 100vh;
+  }
+  
+  .practicetest-container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
