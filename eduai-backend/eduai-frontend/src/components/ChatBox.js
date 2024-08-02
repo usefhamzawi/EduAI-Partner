@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ChatBox.css';
+import client from './axiosConfig'; // Import axiosConfig
 
 const ChatBox = () => {
   const [messages, setMessages] = useState([
@@ -11,17 +12,31 @@ const ChatBox = () => {
     'Chat 1': [{ text: 'Hello! How can I assist you today?', type: 'bot' }],
   });
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (input.trim()) {
+      const userMessage = { text: input, type: 'user' };
       setChats(prevChats => ({
         ...prevChats,
         [activeChat]: [
           ...prevChats[activeChat],
-          { text: input, type: 'user' },
-          { text: 'I see you said: ' + input, type: 'bot' }
+          userMessage
         ]
       }));
       setInput('');
+
+      try {
+        const response = await client.post('/classify/', { question: input });
+        const botMessage = { text: `Answer: ${response.data.answer}`, type: 'bot' };
+        setChats(prevChats => ({
+          ...prevChats,
+          [activeChat]: [
+            ...prevChats[activeChat],
+            botMessage
+          ]
+        }));
+      } catch (error) {
+        console.error('Error answering question:', error);
+      }
     }
   };
 
@@ -46,16 +61,20 @@ const ChatBox = () => {
     if (action === 'rename') {
       const newName = prompt('Enter new chat name:', activeChat);
       if (newName && !chats[newName]) {
-        setChats({ ...chats, [newName]: chats[activeChat] });
-        const { [activeChat]: _, ...rest } = chats;
-        setChats(rest);
+        setChats(prevChats => {
+          const { [activeChat]: deletedChat, ...rest } = prevChats;
+          return { ...rest, [newName]: deletedChat };
+        });
         setActiveChat(newName);
       }
     } else if (action === 'delete') {
       if (Object.keys(chats).length > 1) {
-        const { [activeChat]: _, ...rest } = chats;
-        setChats(rest);
-        setActiveChat(Object.keys(rest)[0]);
+        setChats(prevChats => {
+          const { [activeChat]: deletedChat, ...rest } = prevChats;
+          const newActiveChat = Object.keys(rest)[0];
+          return { ...rest, [newActiveChat]: deletedChat };
+        });
+        setActiveChat(Object.keys(chats).find(chat => chat !== activeChat) || 'Chat 1');
       }
     }
   };
@@ -99,7 +118,7 @@ const ChatBox = () => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Type a message..."
+            placeholder="Type a question..."
           />
           <button className="chatbox-send" onClick={handleSend}>
             <span className="arrow-icon">➤</span>

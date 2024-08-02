@@ -5,7 +5,7 @@ const client = axios.create({
   withCredentials: true,
 });
 
-// Intercept all requests
+// Intercept all requests to include CSRF token
 client.interceptors.request.use(function (config) {
   const csrfToken = document.cookie.split('; ').find(row => row.startsWith('csrftoken='))?.split('=')[1];
   if (csrfToken) {

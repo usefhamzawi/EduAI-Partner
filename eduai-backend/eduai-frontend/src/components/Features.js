@@ -15,18 +15,18 @@ const Features = () => {
             <div className="feature-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M21 3v4a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3M3 10h18M7 16h10" /></svg>
             </div>
-            <h2 className="feature-title">AI Chat Box</h2>
+            <h2 className="feature-title">AI Chat Bot</h2>
             <p className="feature-description">
-              Interact with our AI chat box for instant answers and support on a variety of topics. It's like having a knowledgeable assistant at your fingertips.
+              Interact with our AI chat bot for instant answers and support on a variety of topics. It's like having a knowledgeable assistant at your fingertips.
             </p>
           </div>
           <div className="feature-card">
             <div className="feature-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 19.5a2.5 2.5 0 0 0 2.5 2.5H16a2.5 2.5 0 0 0 2.5-2.5V7a2.5 2.5 0 0 0-2.5-2.5H5.5A2.5 2.5 0 0 0 3 7v12.5z" /></svg>
             </div>
-            <h2 className="feature-title">Practice Tests</h2>
+            <h2 className="feature-title">Fast response</h2>
             <p className="feature-description">
-              Assess your knowledge with customized practice tests. Perfect for studying and improving your skills in various subjects.
+              With our AI model, you can get answers to your questions in seconds.
             </p>
           </div>
           <div className="feature-card">

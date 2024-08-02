@@ -6,10 +6,13 @@ from rest_framework.response import Response
 from rest_framework import permissions, status
 from .serializers import UserRegisterSerializer, UserLoginSerializer, UserSerializer
 from .validations import custom_validation, validate_email, validate_password
-from .bert_model import classify_text
 from django.http import JsonResponse
 from django.views.decorators.csrf import ensure_csrf_cookie
+from .bert_model import answer_question
+import logging
+from django.views.decorators.csrf import csrf_exempt
 
+logger = logging.getLogger(__name__)
 
 class UserRegister(APIView):
 	permission_classes = (permissions.AllowAny,)
@@ -55,12 +58,18 @@ class UserView(APIView):
 		return Response({'user': serializer.data}, status=status.HTTP_200_OK)
 	
 
+@csrf_exempt
 @api_view(['POST'])
 def classify(request):
-    text = request.data.get('text')
-    result = classify_text(text)
-    return Response({"classification": result})
-
+    question = request.data.get('question')
+    logger.info(f"Received question: {question}")
+    try:
+        answer = answer_question(question)
+        logger.info(f"Generated answer: {answer}")
+        return Response({"answer": answer})
+    except Exception as e:
+        logger.error(f"Error answering question: {e}")
+        return Response({"error": "Error answering question"}, status=500)
 
 @ensure_csrf_cookie
 def get_csrf_token(request):
