@@ -70,8 +70,8 @@ def classify(request):
         return Response({"answer": answer})
     except Exception as e:
         logger.error(f"Error answering question: {e}")
-        return Response({"error": "An error occurred while processing your question. Please try again."}, status=500)
-	
+        return Response({"error": "An error occurred while processing your question. Please try again."}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 @ensure_csrf_cookie
 def get_csrf_token(request):
     return JsonResponse({'detail': 'CSRF cookie set'})

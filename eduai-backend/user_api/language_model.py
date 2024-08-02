@@ -1,35 +1,30 @@
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
-import torch
+import openai
 
-model_name = "google/flan-t5-small"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
-
-# Move model to GPU if available
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model = model.to(device)
+# Set your OpenAI API key
+openai.api_key = 'sk-V5VSU109O3POc_TD6dD0yUhtPQQuPEh5lsUTyD8az7T3BlbkFJrSJZnvZtNWvJcNMR_5-Odnaj44B6xEdIzcABe_YSkA'
 
 def answer_question(question):
     input_text = f"Answer the following question: {question}"
-    
-    inputs = tokenizer(input_text, return_tensors="pt", max_length=512, truncation=True).to(device)
-    
-    with torch.no_grad():
-        outputs = model.generate(
-            **inputs,
-            max_new_tokens=100,
-            num_return_sequences=1,
-            temperature=0.7,
-            top_p=0.95,
-            do_sample=True,
-        )
-    
-    answer = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    
+
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "You are a helpful tutor."},
+            {"role": "user", "content": input_text},
+        ],
+        max_tokens=150,
+        n=1,
+        stop=None,
+        temperature=0.7,
+        top_p=0.95,
+    )
+
+    answer = response.choices[0].message['content'].strip()
+
     # Truncate the answer to the first two sentences or a maximum of 150 characters
     sentences = answer.split('.')
     answer = '. '.join(sentences[:2]).strip()
     if len(answer) > 150:
         answer = answer[:147] + "..."
-    
+
     return answer if answer else "I'm sorry, I don't have enough information to answer that question accurately."
