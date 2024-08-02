@@ -8,9 +8,10 @@ from .serializers import UserRegisterSerializer, UserLoginSerializer, UserSerial
 from .validations import custom_validation, validate_email, validate_password
 from django.http import JsonResponse
 from django.views.decorators.csrf import ensure_csrf_cookie
-from .bert_model import answer_question
 import logging
+from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from .language_model import answer_question
 
 logger = logging.getLogger(__name__)
 
@@ -69,8 +70,8 @@ def classify(request):
         return Response({"answer": answer})
     except Exception as e:
         logger.error(f"Error answering question: {e}")
-        return Response({"error": "Error answering question"}, status=500)
-
+        return Response({"error": "An error occurred while processing your question. Please try again."}, status=500)
+	
 @ensure_csrf_cookie
 def get_csrf_token(request):
     return JsonResponse({'detail': 'CSRF cookie set'})

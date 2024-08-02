@@ -26,7 +26,7 @@ const ChatBox = () => {
 
       try {
         const response = await client.post('/classify/', { question: input });
-        const botMessage = { text: `Answer: ${response.data.answer}`, type: 'bot' };
+        const botMessage = { text: `${response.data.answer}`, type: 'bot' };
         setChats(prevChats => ({
           ...prevChats,
           [activeChat]: [
