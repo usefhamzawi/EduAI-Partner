@@ -144,11 +144,12 @@
   color: white;
   font-size: 0.9em;
   outline: none;
-  max-height: 60px; /* Restrict height */
+  max-height: 120px; /* Increased height */
   overflow-y: auto; /* Scroll if needed */
   overflow-x: hidden; /* Hide horizontal scroll */
   margin-right: 10px;
 }
+
 
 .chatbox-send {
   background: #ff6f61;

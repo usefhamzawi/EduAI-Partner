@@ -1,7 +1,9 @@
+annotated-types==0.7.0
+anyio==4.4.0
 apturl==0.5.2
 asgiref==3.8.1
+async-timeout==4.0.3
 bcrypt==3.2.0
-blackeye==0.1
 blinker==1.4
 Brlapi==0.8.3
 certifi==2020.6.20
@@ -18,15 +20,19 @@ distro==1.7.0
 distro-info==1.1+ubuntu0.2
 Django==5.0.7
 django-cors-headers==4.4.0
+django-redis==5.4.0
 djangorestframework==3.15.2
 duplicity==0.8.21
+exceptiongroup==1.2.2
 fasteners==0.14.1
 filelock==3.15.4
 fsspec==2024.6.1
 future==0.18.2
 gyp==0.1
+h11==0.14.0
+httpcore==1.0.5
 httplib2==0.20.2
-huggingface-hub==0.24.5
+httpx==0.27.0
 idna==3.3
 importlib-metadata==4.6.4
 jeepney==0.7.1
@@ -61,6 +67,7 @@ nvidia-nvjitlink-cu12==12.6.20
 nvidia-nvtx-cu12==12.1.105
 oauthlib==3.2.0
 olefile==0.46
+openai==1.38.0
 packaging==24.1
 paramiko==2.9.3
 pexpect==4.8.0
@@ -71,6 +78,8 @@ psycopg2-binary==2.9.9
 ptyprocess==0.7.0
 pycairo==1.20.1
 pycups==2.0.1
+pydantic==2.8.2
+pydantic_core==2.20.1
 PyGObject==3.42.1
 pyinotify==0.9.6
 PyJWT==2.3.0
@@ -85,12 +94,14 @@ python-Levenshtein==0.12.2
 pytz==2022.1
 pyxdg==0.27
 PyYAML==5.4.1
+redis==5.0.8
 regex==2024.7.24
 reportlab==3.6.8
 requests==2.25.1
 safetensors==0.4.3
 SecretStorage==3.3.1
 six==1.16.0
+sniffio==1.3.1
 sqlparse==0.5.1
 sympy==1.13.1
 systemd-python==234
@@ -112,3 +123,17 @@ websocket-client==1.2.3
 xdg==5
 xkit==0.0.0
 zipp==1.0.0
+
+├── @testing-library/jest-dom@5.17.0
+├── @testing-library/react@13.4.0
+├── @testing-library/user-event@13.5.0
+├── axios@1.7.2
+├── bootstrap@5.3.3
+├── js-cookie@3.0.5
+├── react-bootstrap@2.10.4
+├── react-dom@18.3.1
+├── react-mathjax2@0.0.2
+├── react-router-dom@6.25.1
+├── react-scripts@5.0.1
+├── react@18.3.1
+└── web-vitals@2.1.4
