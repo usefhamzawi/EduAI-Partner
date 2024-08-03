@@ -35,3 +35,20 @@ class AppUser(AbstractBaseUser, PermissionsMixin):
 	objects = AppUserManager()
 	def __str__(self):
 		return self.username
+
+
+class Chat(models.Model):
+    name = models.CharField(max_length=255)
+    user = models.ForeignKey(AppUser, on_delete=models.CASCADE)  # Use AppUser instead of User
+
+    def __str__(self):
+        return self.name
+
+class ChatMessage(models.Model):
+    chat = models.ForeignKey(Chat, on_delete=models.CASCADE, null=True)  # Make nullable
+    message = models.TextField()
+    type = models.CharField(max_length=10)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.type.capitalize()}: {self.message[:50]}"  # Preview of the message
